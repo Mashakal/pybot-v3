@@ -101,4 +101,4 @@ class Message:
             data['attachments'] = [getattr(a, '_data', a) for a in attachments]
         if entities:
             data['entities'] = [getattr(e, '_data', e) for e in entities]
-        bot_requests.reply_to_activity(self._service_uri, self._conversation_id, self._activity_id, data)
+        bot_requests.send_to_conversation(self._service_uri, self._conversation_id, data)
